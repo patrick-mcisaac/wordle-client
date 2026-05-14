@@ -8,7 +8,7 @@ type InputProps = {
 export default function Input({ ref, onChange }: InputProps) {
   return (
     <Pressable>
-      <TextInput style={styles.input} onChangeText={onChange} />
+      <TextInput ref={ref} style={styles.input} onChangeText={onChange} />
     </Pressable>
   );
 }
@@ -19,8 +19,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   input: {
-    width: 20,
-    height: 20,
+    width: 50,
+    height: 50,
+    borderRadius: 5,
+    textAlign: "center",
+    fontSize: 20,
+    fontWeight: "bold",
     backgroundColor: "white",
   },
 });
