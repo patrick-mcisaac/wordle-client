@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { StyleSheet, TextInput, View } from "react-native";
+import React from "react";
+import { Pressable, StyleSheet, TextInput } from "react-native";
 
-export default function Input() {
-  const [userInput, setUserInput] = useState<string | undefined>();
+type InputProps = {
+  ref: React.RefObject<TextInput | null>;
+  onChange: (e: string) => void;
+};
+export default function Input({ ref, onChange }: InputProps) {
   return (
-    <View style={styles.container}>
-      <TextInput
-        value={userInput ? userInput[0] : ""}
-        onChangeText={setUserInput}
-      />
-    </View>
+    <Pressable>
+      <TextInput style={styles.input} onChangeText={onChange} />
+    </Pressable>
   );
 }
 
@@ -17,5 +17,10 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "row",
+  },
+  input: {
+    width: 20,
+    height: 20,
+    backgroundColor: "white",
   },
 });
