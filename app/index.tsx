@@ -16,12 +16,15 @@ export default function Index() {
         <Text
           style={{
             color: colors.text,
+            ...styles.header,
           }}
         >
           Wordle
         </Text>
       </View>
-      <Rows />
+      <View>
+        <Rows />
+      </View>
     </SafeAreaView>
   );
 }
@@ -33,5 +36,11 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
     flex: 1,
+    gap: 100,
+    padding: 50,
+  },
+  header: {
+    fontSize: 30,
+    fontWeight: "bold",
   },
 });
